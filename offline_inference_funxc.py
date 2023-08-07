@@ -50,7 +50,7 @@ def run_vllm() -> List[Dict[str, str]]:
     func_uuid = gcc.register_function(_run_vllm)
     print("Function UUID:", func_uuid)
 
-    # The vllm endpoint UUID on Polaris
+    # TODO: The vllm endpoint UUID on Polaris
     endpoint = "5228c1c5-fc96-44d6-ad77-578281186fa6"
     
     # Submit the remote procedure call
