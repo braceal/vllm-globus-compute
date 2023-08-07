@@ -5,7 +5,7 @@ This demonstrates how to run a vLLM instance on Polaris and submit inference
 prompts from any computer and receive the response from a model of your choice
 back to the computer you submitted the task from.
 
-**Note**: This is a hands-on repo. It will be helpful to read all the code files since you will be editing them.
+**Note**: This is a hands-on repo. It will be helpful to read all the code files since you will be editing them by the `TODO` statements.
   
 
 # Install
