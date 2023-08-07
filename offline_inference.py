@@ -1,6 +1,8 @@
 import os
 from vllm import LLM, SamplingParams
 
+# TODO: Change to your directory or comment out to use home anyways
+# Relocate huggingface cache dir to avoid running out of same in home
 os.environ["HF_HOME"] = "/lus/eagle/projects/CVD-Mol-AI/braceal/cache/huggingface"
 
 # Sample prompts.
