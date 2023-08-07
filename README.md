@@ -169,7 +169,7 @@ Locally (or from any computer),
 ```bash
 conda create -n vllm python=3.10.11 -y
 pip install globus-compute-endpoint
-python offline_inference_funxc.py 
+python offline_inference_funcx.py
 ```
 
 # Next steps
