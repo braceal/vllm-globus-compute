@@ -4,6 +4,8 @@ vLLM with Globus Compute
 This demonstrates how to run a vLLM instance on Polaris and submit inference
 prompts from any computer and receive the response from a model of your choice
 back to the computer you submitted the task from.
+
+**Note**: This is a hands-on repo. It will be helpful to read all the code files since you will be editing them.
   
 
 # Install
@@ -138,6 +140,8 @@ You should see that the `vllm` endpoint is in the `Running` state:
 ```bash
 globus-compute-endpoint list
 ```
+
+**Important**: Take the UUID next to your `vllm` endpoint and copy it into `offline_inference_funcx.py` under the `TODO`.
 
 You can stop your endpoint by running:
 ```bash
