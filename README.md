@@ -3,11 +3,11 @@ vLLM with Globus Compute
 
 This demonstrates how to run a vLLM instance on Polaris and submit inference
 prompts from any computer and receive the response from a model of your choice
-back to the computer your submited the task from.
+back to the computer you submitted the task from.
   
 
 # Install
-**Note**: xformers needs particular versions of python to avoid building from source
+**Note**: xformers needs a particular version of python to avoid building from source
 
 ```bash
 module load conda/2023-01-10-unstable
@@ -70,7 +70,7 @@ python offline_inference.py
 
 # Setup a globus-compute endpoint (funcx) to run LLM inference from anywhere
 
-First install and run the command to configure the endpoint
+First, install and run the command to configure the endpoint
 ```bash
 pip install globus-compute-endpoint
 globus-compute-endpoint configure
@@ -78,8 +78,7 @@ globus-compute-endpoint configure vllm
 ```
 
 The above command will output a yaml file with the globus-compute configuration.
-Let's update it by copying this in. Make sure to update the **account** name so that
-your jobs get charge the correct account.
+Let's update it by copying this in. Make sure to update the **account** name so your jobs get charged correctly.
 
 For more details, see here: https://funcx.readthedocs.io/en/latest/endpoints.html#polaris-alcf
 
