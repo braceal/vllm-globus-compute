@@ -147,8 +147,10 @@ Now that the globus-compute endpoint is running, we can open a new terminal and
 run the vllm inference function locally and receive the response back from the
 model running on Polaris.
 
-**Note**: We need to use the same python version as is running on Polaris 
+**Note**: We need to use the same python version as is running on Polaris.
+
 **Note**: The first time your run the function on a new computer you will need to authenticate with Globus.
+
 **Note**: If it's been a while since you've run the function, it will take a minute to warm up. That's because the job has to get through the queue and import the python libraries, etc. Subsequent calls will be faster.
 
 Locally (or from any computer),
