@@ -149,11 +149,16 @@ run the vllm inference function locally and receive the response back from the
 model running on Polaris.
 
 **Note**: We need to use the same python version as is running on Polaris 
+**Note**: The first time your run the function on a new computer you will need to authenticate with Globus.
+**Note**: If it's been a while since you've run the function, it will take a minute to warm up. That's because the job has to get through the queue and import the python libraries, etc. Subsequent calls will be faster.
 
-Locally,
+Locally (or from any computer),
 ```bash
-conda create -n vllm python=3.10.11
+conda create -n vllm python=3.10.11 -y
 pip install globus-compute-endpoint
 python offline_inference_funxc.py 
 ```
+
+# Next steps
+Now you are able to run inference from anywhere. Try playing with different models, sampling parameters, prompts, etc. Build a CLI to experiment, call your function from other software, have fun!
 
