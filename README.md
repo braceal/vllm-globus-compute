@@ -9,6 +9,12 @@ back to the computer you submitted the task from.
   
 
 # Install
+
+Please run all installation commands on an interactive node so that it uses the correct build environment:
+```bash
+qsub -I -l select=1 -l walltime=1:00:00 -A <project-id> -q debug -l filesystems=home:eagle
+```
+
 **Note**: xformers needs a particular version of python to avoid building from source
 
 ```bash
