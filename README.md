@@ -90,7 +90,7 @@ globus-compute-endpoint configure vllm
 The above command will output a yaml file with the globus-compute configuration.
 Let's update it by copying this in. Make sure to update the **account** name so your jobs get charged correctly.
 
-For more details, see here: https://funcx.readthedocs.io/en/latest/endpoints.html#polaris-alcf
+For more details, see here: https://globus-compute.readthedocs.io/en/latest/endpoints.html#polaris-alcf
 
 Update this file: `~/.globus_compute/vllm/config.yaml` 
 ```yaml
@@ -168,7 +168,7 @@ model running on Polaris.
 Locally (or from any computer),
 ```bash
 conda create -n vllm python=3.10.11 -y
-pip install globus-compute-endpoint
+pip install globus-compute-sdk
 python offline_inference_funxc.py 
 ```
 
