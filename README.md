@@ -28,6 +28,7 @@ Before running, we recommend you put your huggingface cache directory
 on a file system with a larger quota than the home directory, e.g.,
 ```bash
 echo 'export HF_HOME=/lus/eagle/projects/CVD-Mol-AI/braceal/cache/huggingface' >> ~/.bashrc
+source ~/.bashrc
 ```
 
 **Important**: Please make sure to update the path in the .py files as well (sorry it's a bit hacky)
@@ -90,7 +91,7 @@ globus-compute-endpoint configure vllm
 The above command will output a yaml file with the globus-compute configuration.
 Let's update it by copying this in. Make sure to update the **account** name so your jobs get charged correctly.
 
-For more details, see here: https://funcx.readthedocs.io/en/latest/endpoints.html#polaris-alcf
+For more details, see here: https://globus-compute.readthedocs.io/en/latest/endpoints.html#polaris-alcf
 
 Update this file: `~/.globus_compute/vllm/config.yaml` 
 ```yaml
@@ -168,8 +169,9 @@ model running on Polaris.
 Locally (or from any computer),
 ```bash
 conda create -n vllm python=3.10.11 -y
-pip install globus-compute-endpoint
-python offline_inference_funcx.py
+conda activate vllm
+pip install globus-compute-sdk
+python offline_inference_gc.py
 ```
 
 # Next steps
