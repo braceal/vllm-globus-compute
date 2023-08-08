@@ -79,7 +79,7 @@ At this point you should be able to run
 python offline_inference.py
 ```
 
-# Setup a globus-compute endpoint (funcx) to run LLM inference from anywhere
+# Setup a globus-compute endpoint to run LLM inference from anywhere
 
 First, install and run the command to configure the endpoint
 ```bash
@@ -148,7 +148,7 @@ You should see that the `vllm` endpoint is in the `Running` state:
 globus-compute-endpoint list
 ```
 
-**Important**: Take the UUID next to your `vllm` endpoint and copy it into `offline_inference_funcx.py` under the `TODO`.
+**Important**: Take the UUID next to your `vllm` endpoint and copy it into `offline_inference_gc.py` under the `TODO`.
 
 You can stop your endpoint by running:
 ```bash
