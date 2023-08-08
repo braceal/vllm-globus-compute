@@ -169,8 +169,9 @@ model running on Polaris.
 Locally (or from any computer),
 ```bash
 conda create -n vllm python=3.10.11 -y
+conda activate vllm
 pip install globus-compute-sdk
-python offline_inference_funxc.py 
+python offline_inference_gc.py
 ```
 
 # Next steps
