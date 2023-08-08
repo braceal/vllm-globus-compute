@@ -28,6 +28,7 @@ Before running, we recommend you put your huggingface cache directory
 on a file system with a larger quota than the home directory, e.g.,
 ```bash
 echo 'export HF_HOME=/lus/eagle/projects/CVD-Mol-AI/braceal/cache/huggingface' >> ~/.bashrc
+source ~/.bashrc
 ```
 
 **Important**: Please make sure to update the path in the .py files as well (sorry it's a bit hacky)

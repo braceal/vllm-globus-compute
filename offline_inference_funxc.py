@@ -1,8 +1,8 @@
 import time
 from typing import List, Dict
-from globus_compute_sdk import Client
+from globus_compute_sdk import Executor
 
-def _run_vllm():
+def _run_vllm(prompts):
     import os
     from vllm import LLM, SamplingParams
 
@@ -15,13 +15,6 @@ def _run_vllm():
     # Relocate huggingface cache dir to avoid running out of same in home
     os.environ["HF_HOME"] = "/lus/eagle/projects/CVD-Mol-AI/braceal/cache/huggingface"
 
-    # Sample prompts.
-    prompts = [
-        "Hello, my name is",
-        "The president of the United States is",
-        "The capital of France is",
-        "The future of AI is",
-    ]
     # Create a sampling params object.
     sampling_params = SamplingParams(temperature=0.7, top_p=0.95)
 
@@ -45,25 +38,27 @@ def _run_vllm():
 def run_vllm() -> List[Dict[str, str]]:
     """Client side function."""
 
-    # Initialize the compute client and register our function
-    gcc = Client()
-    func_uuid = gcc.register_function(_run_vllm)
-    print("Function UUID:", func_uuid)
-
     # TODO: The vllm endpoint UUID on Polaris
     endpoint = "5228c1c5-fc96-44d6-ad77-578281186fa6"
     
+    # Initialize the compute executor
+    gce = Executor(endpoint_id=endpoint)
+
+    # Sample prompts.
+    prompts = [
+        "Hello, my name is",
+        "The president of the United States is",
+        "The capital of France is",
+        "The future of AI is",
+    ]
+
     # Submit the remote procedure call
-    res = gcc.run(endpoint_id=endpoint, function_id=func_uuid)
+    fut = gce.submit(_run_vllm, prompts)
 
-    print("Running function", res)
-
-    # Block until the result is returned from the server
-    while gcc.get_task(res)["pending"]:
-        time.sleep(3)
+    print("Running function", fut)
 
     # Collect the return result
-    result = gcc.get_result(res)
+    result = fut.result()
 
     return result
 
