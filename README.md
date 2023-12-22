@@ -15,8 +15,14 @@ Please run all installation commands on an interactive node so that it uses the 
 qsub -I -l select=1 -l walltime=1:00:00 -A <project-id> -q debug -l filesystems=home:eagle
 ```
 
-**Note**: xformers needs a particular version of python to avoid building from source
+Build the environment:
+```bash
+mamba env create -f environment.yml
+conda activate vllm
+```
 
+> :warning: This installation no longer works since new vllm versions require new nvidia drivers. Please build the env using `environment.yml` instead.
+**Note**: xformers needs a particular version of python to avoid building from source
 ```bash
 module load conda/2023-01-10-unstable
 conda create -n vllm python=3.10.11 -y
