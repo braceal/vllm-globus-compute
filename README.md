@@ -17,6 +17,7 @@ qsub -I -l select=1 -l walltime=1:00:00 -A <project-id> -q debug -l filesystems=
 
 Build the environment:
 ```bash
+module load conda/2023-01-10-unstable
 mamba env create -f environment.yml
 conda activate vllm
 ```
