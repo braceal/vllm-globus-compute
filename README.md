@@ -22,6 +22,7 @@ conda activate vllm
 ```
 
 > :warning: This installation no longer works since new vllm versions require new nvidia drivers. Please build the env using `environment.yml` instead.
+
 **Note**: xformers needs a particular version of python to avoid building from source
 ```bash
 module load conda/2023-01-10-unstable
